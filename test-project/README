@@ -1,0 +1,11 @@
+This is a test C++ project for testing the generation and compilation of code that uses
+the Google Testing Framework for C++.
+
+The test class 'TestClass' should be generated via the Google Test Generator Eclipse plugin
+so that it make can make a binary.
+
+$ autoreconf -I me -i
+$ mkdir build && cd build
+$ ../configure --with-gtest=<GTEST>
+$ make
+$ ./src/test-project
