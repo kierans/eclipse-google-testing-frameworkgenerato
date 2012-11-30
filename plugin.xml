@@ -11,7 +11,7 @@
             category="GoogleTestGenerator"
             class="org.quasar.googletestgenerator.wizards.GoogleTestClassWizard"
             hasPages="true"
-            icon="src/resources/icons/newclass_wiz.gif"
+            icon="resources/icons/newclass_wiz.gif"
             id="org.quasar.googletestgenerator.wizards.GoogleTestClassWizard"
             name="Google Test Class">
       </wizard>
