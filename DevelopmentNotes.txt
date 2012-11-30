@@ -1,0 +1,9 @@
+ - Icons are found in the Eclipse distro, use find to find them.
+ 
+ - http://wiki.eclipse.org/Getting_started_with_CDT_development
+   - API baseline
+   - API Descriptions
+   
+ - http://wiki.eclipse.org/CDT/User/FAQ#Working_on_the_CDT
+ 
+ - http://wiki.eclipse.org/User_Interface_Guidelines

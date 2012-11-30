@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GoogleTestGenerator
+Bundle-SymbolicName: GoogleTestGenerator;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.quasar.googletestgenerator.Activator
+Bundle-Vendor: Quasar Programming
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui.ide,
+ org.eclipse.cdt;bundle-version="8.1.1",
+ org.eclipse.cdt.core;bundle-version="5.4.1",
+ org.eclipse.cdt.ui;bundle-version="5.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

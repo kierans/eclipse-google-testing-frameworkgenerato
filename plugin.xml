@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="GoogleTestGenerator"
+            name="Google Test Wizard">
+      </category>
+      <wizard
+            category="GoogleTestGenerator"
+            class="org.quasar.googletestgenerator.wizards.GoogleTestClassWizard"
+            hasPages="true"
+            icon="src/resources/icons/newclass_wiz.gif"
+            id="org.quasar.googletestgenerator.wizards.GoogleTestClassWizard"
+            name="Google Test Class">
+      </wizard>
+   </extension>
+
+</plugin>

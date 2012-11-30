@@ -1,0 +1,7 @@
+syntax: glob
+
+*~
+.DS_Store
+bin/
+m4/lt*
+m4/libtool*
