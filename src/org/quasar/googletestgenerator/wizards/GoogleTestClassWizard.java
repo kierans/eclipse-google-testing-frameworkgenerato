@@ -10,6 +10,10 @@ package org.quasar.googletestgenerator.wizards;
 import java.lang.reflect.Field;
 
 import org.eclipse.cdt.internal.ui.wizards.NewClassCreationWizard;
+import org.eclipse.cdt.ui.CUIPlugin;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.quasar.googletestgenerator.Activator;
 
 /**
  * Specialised creation of a new C++ class that uses Google Testing Framework.
@@ -20,7 +24,7 @@ public class GoogleTestClassWizard extends NewClassCreationWizard {
   public GoogleTestClassWizard() {
     super();
 
-    // TODO: Refactor me to constant.
+    // TODO: Move these to more translatable friendly constants.
     setWindowTitle("New Google Test Class");
   }
 
@@ -32,7 +36,7 @@ public class GoogleTestClassWizard extends NewClassCreationWizard {
 
     addPage(this.mainPage);
 
-    this.mainPage.init(this.getSelection());
+    this.mainPage.init(getSelection());
   }
 
   private NewGoogleTestClassWizardPage createAndInjectPage() {
@@ -42,7 +46,8 @@ public class GoogleTestClassWizard extends NewClassCreationWizard {
       injectPageIntoParentClassAttribute(page);
     }
     catch (final Exception e) {
-      // TODO: Something with the exception.
+      final IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, IStatus.ERROR, "Error injecting page into parent", e);
+      CUIPlugin.log(status);
     }
 
     return page;
@@ -64,17 +69,4 @@ public class GoogleTestClassWizard extends NewClassCreationWizard {
     superPage.setAccessible(true);
     superPage.set(this, page);
   }
-
-  // if (!resource.exists() || !(resource instanceof IContainer)) {
-  // throwCoreException("Container \"" + containerName + "\" does not exist.");
-  // }
-  // private void throwCoreException(String message) throws CoreException {
-  // IStatus status = new Status(IStatus.ERROR, "GoogleTestGenerator",
-  // IStatus.OK, message, null);
-  // throw new CoreException(status);
-  // }
-
-  // public void init(IWorkbench workbench, IStructuredSelection selection) {
-  // this.selection = selection;
-  // }
 }

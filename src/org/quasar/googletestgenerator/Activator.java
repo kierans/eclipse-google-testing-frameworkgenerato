@@ -14,7 +14,7 @@ import org.osgi.framework.BundleContext;
  * The activator class controls the plug-in life cycle
  */
 public class Activator extends AbstractUIPlugin {
-  public static final String PLUGIN_ID = "GoogleTestGenerator";
+  public static final String PLUGIN_ID = "org.quasar.googletestgenerator.GoogleTestGenerator";
 
   // The shared instance
   private static Activator plugin;

@@ -22,12 +22,16 @@ import org.eclipse.cdt.core.model.CoreModel;
 import org.eclipse.cdt.core.parser.ast.ASTAccessVisibility;
 import org.eclipse.cdt.internal.ui.browser.opentype.ElementSelectionDialog;
 import org.eclipse.cdt.internal.ui.wizards.dialogfields.LayoutUtil;
+import org.eclipse.cdt.ui.CUIPlugin;
 import org.eclipse.cdt.ui.wizards.NewClassCreationWizardPage;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
+import org.quasar.googletestgenerator.Activator;
 import org.quasar.googletestgenerator.cdt.MethodStub;
 
 /**
@@ -38,6 +42,7 @@ import org.quasar.googletestgenerator.cdt.MethodStub;
 public class NewGoogleTestClassWizardPage extends NewClassCreationWizardPage {
   public static final String PAGE_NAME = "NewGoogleTestClassWizardPage";
   private static final IProgressMonitor NO_MONITOR = null;
+  private static final Throwable NO_CAUSE = null;
 
   private static boolean preConstructionCalled = false;
 
@@ -131,7 +136,7 @@ public class NewGoogleTestClassWizardPage extends NewClassCreationWizardPage {
       }
     }
     catch(final Exception e)  {
-      throwException("Problem adding Google Test Calss as default parent of new class", e);
+      throwException("Problem adding Google Test Class as default parent of new class", e);
     }
   }
 
@@ -192,11 +197,12 @@ public class NewGoogleTestClassWizardPage extends NewClassCreationWizardPage {
   }
 
   private static void throwException(final String message) {
-    throw new RuntimeException(message);
+    throwException(message, NO_CAUSE);
   }
 
   private static void throwException(final String message, final Throwable e) {
-    throw new RuntimeException(message, e);
+    final IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, IStatus.ERROR, message, e);
+    CUIPlugin.log(status);
   }
 
   private void checkPreconstruction() {
