@@ -18,6 +18,7 @@ To install download the JAR from https://dl.dropbox.com/u/11067246/org.quasar.go
 
 # Use
 
-https://dl.dropbox.com/u/11067246/NewClassWizard.png
 
-https://dl.dropbox.com/u/11067246/NewClassDialog.png
+![](./docs/NewClassWizard.png)
+
+![](./docs/NewClassDialog.png)
